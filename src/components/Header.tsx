@@ -1,0 +1,27 @@
+type HeaderProps = {
+  title?: string;
+  showNav?: boolean;
+};
+
+export function Header({ title = "Frontend Engineer Assessment", showNav = false }: HeaderProps) {
+  return (
+    <header className="app-header">
+      <div className="header-left">
+        <div className="brand-mark" aria-label="InterviewOS">
+          <span className="brand-icon">IO</span>
+          <span className="brand-word">InterviewOS</span>
+        </div>
+        <span className="header-divider" />
+        {showNav ? (
+          <nav className="primary-nav" aria-label="Primary navigation">
+            <a href="/">Challenges</a>
+            <a href="/workspace">Assessments</a>
+          </nav>
+        ) : (
+          <h1>{title}</h1>
+        )}
+      </div>
+      <div className="avatar">DA</div>
+    </header>
+  );
+}
